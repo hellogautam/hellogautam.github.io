@@ -15,7 +15,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/hellogautam"
         target="_blank"
         rel="noopener noreferrer"
         class="p-6 border dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow"
@@ -25,7 +25,7 @@
       </a>
 
       <a
-        href="https://linkedin.com/in/yourusername"
+        href="https://linkedin.com/in/hellogautam"
         target="_blank"
         rel="noopener noreferrer"
         class="p-6 border dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow"
@@ -43,7 +43,7 @@
       </a>
 
       <a
-        href="https://twitter.com/yourusername"
+        href="https://twitter.com/hellogautam1"
         target="_blank"
         rel="noopener noreferrer"
         class="p-6 border dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow"
