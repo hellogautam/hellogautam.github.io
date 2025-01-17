@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Vue 3 Composition API",
+      "type": "article",
+      "link": "https://vuejs.org/guide/extras/composition-api-faq.html",
+      "date": "2024-03-20",
+      "tags": ["vue", "javascript"],
+      "notes": "Great overview of the Composition API and its benefits"
+    },
+    {
+      "id": "2",
+      "title": "Understanding TypeScript",
+      "type": "video",
+      "link": "https://example.com/typescript-course",
+      "date": "2024-03-19",
+      "tags": ["typescript"],
+      "notes": "Comprehensive TypeScript tutorial"
+    }
+  ]
+} 
