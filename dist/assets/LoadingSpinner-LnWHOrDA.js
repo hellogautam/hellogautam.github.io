@@ -1,0 +1,1 @@
+import{m as r,o as n,c as s,a as o}from"./index-DMQPWoA8.js";const t={},a={class:"flex justify-center items-center py-8"};function c(i,e){return n(),s("div",a,e[0]||(e[0]=[o("div",{class:"animate-spin rounded-full h-12 w-12 border-b-2 border-primary-light dark:border-primary-dark"},null,-1)]))}const l=r(t,[["render",c]]);export{l as L};

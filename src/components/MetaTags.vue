@@ -1,6 +1,6 @@
 <template>
   <div v-once>
-    <title>{{ title }} | Portfolio</title>
+    <title>{{ title }} | Gautam City</title>
     <meta name="description" :content="description">
   </div>
 </template>
