@@ -76,33 +76,31 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { loadReadingList } from '@/utils/content'
+import MetaTags from '@/components/MetaTags.vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import { searchContent } from '@/utils/search'
 import type { ReadingItem } from '@/types'
 
 const items = ref<ReadingItem[]>([])
+const searchQuery = ref('')
+const selectedType = ref<string | null>(null)
 const loading = ref(true)
 const error = ref<string | null>(null)
-const selectedType = ref('All')
 
-const types = ['All', 'Article', 'Paper', 'Video']
+const allTypes = computed(() => {
+  const types = new Set<string>()
+  items.value.forEach(item => {
+    types.add(item.type)
+  })
+  return Array.from(types).sort()
+})
 
-const filteredItems = computed(() => 
-  selectedType.value === 'All'
-    ? items.value
-    : items.value.filter(item => 
-        item.type.toLowerCase() === selectedType.value.toLowerCase()
-      )
-)
-
-onMounted(async () => {
-  try {
-    items.value = await loadReadingList()
-  } catch (e) {
-    error.value = 'Failed to load reading list'
-    console.error(e)
-  } finally {
-    loading.value = false
+const filteredItems = computed(() => {
+  let filtered = searchContent(items.value, searchQuery.value)
+  if (selectedType.value) {
+    filtered = filtered.filter(item => item.type === selectedType.value)
   }
+  return filtered
 })
 
 const formatDate = (date: string) => {
@@ -112,4 +110,16 @@ const formatDate = (date: string) => {
     day: 'numeric'
   })
 }
+
+onMounted(async () => {
+  try {
+    const response = await import('@/content/reading/index.json')
+    items.value = response.default.items
+  } catch (e) {
+    error.value = 'Failed to load reading list'
+    console.error(e)
+  } finally {
+    loading.value = false
+  }
+})
 </script> 
