@@ -40,6 +40,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory('/portfolio/'), // Change this to your repo name
+  history: createWebHistory('/'),  // Changed to root path
   routes
 }) 
